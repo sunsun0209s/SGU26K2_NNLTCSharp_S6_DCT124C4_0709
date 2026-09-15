@@ -4,6 +4,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Bai1.Run();
+        //Bai1.Run();
+        //Bai2.Run();
+        Bai3.Run();
     }
 }
