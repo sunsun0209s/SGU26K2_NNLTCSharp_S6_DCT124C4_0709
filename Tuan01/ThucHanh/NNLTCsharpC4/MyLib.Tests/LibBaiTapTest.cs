@@ -67,7 +67,7 @@ public class LibBaiTapTests
     public void GiaiPTBac2_HaiNghiem_LuonDuocSapXepTangDan()
     {
         double x1 = 0, x2 = 0;
-        int result = LibBai1.GiaiPTBac2(-1, 3, -2, ref x1, ref x2);
+        int result = LibBaiTap.GiaiPTBac2(-1, 3, -2, ref x1, ref x2);
         Assert.Equal(2, result);
         Assert.Equal(1, x1);
         Assert.Equal(2, x2);
