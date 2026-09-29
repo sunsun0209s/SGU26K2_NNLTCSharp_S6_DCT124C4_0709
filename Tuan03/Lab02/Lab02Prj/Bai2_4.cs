@@ -160,8 +160,6 @@ public class Bai2_4
 {
     public static void Run()
     {
-        Console.WriteLine("Bai 2.4: Lop chua mang 2 chieu (Mang2Chieu)");
-
         Mang2Chieu m = new Mang2Chieu();
         m.Input();
 
