@@ -100,11 +100,8 @@ public class Bai1_3
 {
     public static void Run()
     {
-        Console.WriteLine("Bai 1.3: Quan ly thong tin Person");
-
         Person p = new Person();
         p.Input();
-
         Console.WriteLine("Thong tin vua nhap:");
         p.Output();
     }
