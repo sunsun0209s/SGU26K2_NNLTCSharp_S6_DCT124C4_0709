@@ -72,11 +72,3 @@ public class Bai1_1
         sv.Xuat();
     }
 }
-
-internal class Program
-{
-    static void Main(string[] args)
-    {
-        Bai1_1.Run();
-    }
-}
