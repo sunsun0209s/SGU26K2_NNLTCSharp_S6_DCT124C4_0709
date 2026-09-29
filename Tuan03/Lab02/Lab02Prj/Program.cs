@@ -6,6 +6,8 @@ public class Program
     {
         // Bai1_1.Run();
         // Bai1_2.Run();
-        Bai1_3.Run();
+        // Bai1_3.Run();
+        // Bai1_4.Run();
+        Bai1_5.Run();
     }
 }
