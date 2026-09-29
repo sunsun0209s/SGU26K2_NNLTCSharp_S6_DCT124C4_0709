@@ -13,6 +13,7 @@ public class Program
         // Bai2_2.Run();
         // Bai2_3.Run();
         // Bai2_4.Run();
-        Bai2_3_2.Run();
+        // Bai2_3_2.Run();
+        Bai2_4_2.Run();
     }
 }
