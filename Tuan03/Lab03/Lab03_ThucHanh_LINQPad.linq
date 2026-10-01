@@ -1,22 +1,5 @@
 <Query Kind="Program" />
 
-// =========================================================================
-// BÀI THỰC HÀNH 03 - LINQ CƠ BẢN TRÊN LINQPAD (https://www.linqpad.net)
-// Sinh viên: Trương Xuân Tâm - MSSV: 3124411266 - Lớp: DCT124C4
-// =========================================================================
-// GHI CHÚ VỀ LINQPAD:
-// 1. LINQPad là công cụ viết mã và thử nghiệm LINQ/C# tức thì của Joseph Albahari.
-// 2. Chế độ thực thi:
-//    - C# Expression: Dành cho một biểu thức LINQ đơn lẻ.
-//    - C# Statements: Dành cho các đoạn mã tuần tự không cần hàm Main.
-//    - C# Program: Dành cho chương trình đầy đủ có hàm Main() và định nghĩa class.
-// 3. Phương thức .Dump():
-//    - Đây là "vũ khí tối thượng" của LINQPad (Extension method độc quyền).
-//    - Thay vì phải viết vòng lặp foreach và Console.WriteLine như trong VSCode,
-//      chỉ cần gọi đối tượng.Dump("Tiêu đề") là LINQPad tự động hiển thị bảng
-//      HTML tương tác trực quan, cho phép duyệt mảng, xem phân nhóm GroupBy cực nhanh.
-// =========================================================================
-
 void Main()
 {
     "=== 1. THỬ NGHIỆM BÀI 2.1: MẢNG SỐ NGUYÊN ===".Dump();
