@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/Tuan01/" />
+  <Folder Name="/Tuan01/Lab01/">
+    <Project Path="Tuan01/Lab01/Lab01Prj/Lab01Prj.csproj" />
+  </Folder>
+  <Folder Name="/Tuan01/ThucHanh/" />
+  <Folder Name="/Tuan01/ThucHanh/NNLTCsharpC4/">
+    <Project Path="Tuan01/ThucHanh/NNLTCsharpC4/Buoi01Prj/Buoi01Prj.csproj" />
+    <Project Path="Tuan01/ThucHanh/NNLTCsharpC4/MyLib.Tests/MyLib.Tests.csproj" />
+    <Project Path="Tuan01/ThucHanh/NNLTCsharpC4/MyLib/MyLib.csproj" />
+  </Folder>
+  <Folder Name="/Tuan02/" />
+  <Folder Name="/Tuan02/Lab02/">
+    <Project Path="Tuan02/Lab02/Lab01Prj/Lab01Prj.csproj" />
+    <Project Path="Tuan02/Lab02/Lab02Prj/Lab02Prj.csproj" />
+  </Folder>
+  <Folder Name="/Tuan03/" />
+  <Folder Name="/Tuan03/Lab03/">
+    <Project Path="Tuan03/Lab03/BaiThucHanhLINQ/BaiThucHanhLINQ.csproj" />
+  </Folder>
+</Solution>
