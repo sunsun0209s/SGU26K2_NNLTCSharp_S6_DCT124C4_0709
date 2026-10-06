@@ -4,9 +4,7 @@
 - **Họ và tên:** Trương Xuân Tâm
 - **Mã số sinh viên:** 3124411266
 - **Lớp:** DCT124C4
-- **Môn học:** Ngôn ngữ lập trình C# (841423)
-- **Giảng viên hướng dẫn:** TS. Đỗ Như Tài
-
+  
 ## Cấu trúc repository
 - `NNLTCSharp.sln`: Solution tổng quản lý toàn bộ các dự án học tập.
 - `TaiLieu/`: Slide bài giảng, đề tài và tài liệu thực hành.
