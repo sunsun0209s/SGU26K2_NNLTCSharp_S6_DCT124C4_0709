@@ -18,4 +18,8 @@
   <Folder Name="/Tuan03/Lab03/">
     <Project Path="Tuan03/Lab03/BaiThucHanhLINQ/BaiThucHanhLINQ.csproj" />
   </Folder>
+  <Folder Name="/Tuan04/" />
+  <Folder Name="/Tuan04/Lab04/">
+    <Project Path="Tuan04/Lab04/Lab04Prj/Lab04Prj.csproj" />
+  </Folder>
 </Solution>
