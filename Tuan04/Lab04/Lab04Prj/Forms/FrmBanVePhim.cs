@@ -4,89 +4,39 @@ using System.Windows.Forms;
 
 namespace Lab04Prj.Forms;
 
-public class FrmBanVePhim : Form
+public partial class FrmBanVePhim : Form
 {
-    private Label lblManAnh = null!;
-    private Button[] btnGhes = new Button[15];
-    private Label lblThanhTienLabel = null!;
-    private TextBox txtThanhTien = null!;
-    private Button btnChon = null!;
-    private Button btnHuyBo = null!;
-    private Button btnKetThuc = null!;
-
+    private Button[] btnGhes = null!;
     // Trạng thái ghế: 0 = Trắng (Chưa bán), 1 = Xanh (Đang chọn), 2 = Vàng (Đã bán)
     private int[] trangThaiGhe = new int[15];
 
     public FrmBanVePhim()
     {
         InitializeComponent();
+        KhoiTaoDanhSachGhe();
     }
 
-    private void InitializeComponent()
+    private void KhoiTaoDanhSachGhe()
     {
-        this.Text = "BÁN VÉ RẠP CHIẾU BÓNG";
-        this.Font = new Font("Tahoma", 10F, FontStyle.Regular);
-        this.Size = new Size(460, 420);
-        this.StartPosition = FormStartPosition.CenterScreen;
-        this.FormBorderStyle = FormBorderStyle.FixedDialog;
-        this.MaximizeBox = false;
-
-        lblManAnh = new Label
+        btnGhes = new Button[]
         {
-            Text = "MÀN ẢNH",
-            Font = new Font("Tahoma", 14F, FontStyle.Bold),
-            ForeColor = Color.DarkOrange,
-            BackColor = Color.LightYellow,
-            BorderStyle = BorderStyle.FixedSingle,
-            TextAlign = ContentAlignment.MiddleCenter,
-            Location = new Point(30, 15),
-            Size = new Size(380, 40)
+            btnGhe1, btnGhe2, btnGhe3, btnGhe4, btnGhe5,
+            btnGhe6, btnGhe7, btnGhe8, btnGhe9, btnGhe10,
+            btnGhe11, btnGhe12, btnGhe13, btnGhe14, btnGhe15
         };
-
-        int startX = 40;
-        int startY = 75;
-        int btnWidth = 65;
-        int btnHeight = 45;
-        int gapX = 12;
-        int gapY = 12;
 
         for (int i = 0; i < 15; i++)
         {
-            int row = i / 5;
-            int col = i % 5;
-            int gheIndex = i;
-
-            btnGhes[i] = new Button
-            {
-                Text = (i + 1).ToString(),
-                Font = new Font("Tahoma", 11F, FontStyle.Bold),
-                Size = new Size(btnWidth, btnHeight),
-                Location = new Point(startX + col * (btnWidth + gapX), startY + row * (btnHeight + gapY)),
-                BackColor = Color.White
-            };
-
-            btnGhes[i].Click += (s, e) => ClickGhe(gheIndex);
-            this.Controls.Add(btnGhes[i]);
+            btnGhes[i].Tag = i;
         }
+    }
 
-        lblThanhTienLabel = new Label { Text = "Thành Tiền:", Location = new Point(50, 275), Size = new Size(90, 25) };
-        txtThanhTien = new TextBox { Text = "0", Location = new Point(150, 272), Size = new Size(200, 25), ReadOnly = true, TextAlign = HorizontalAlignment.Right };
-
-        btnChon = new Button { Text = "Chọn", Location = new Point(50, 320), Size = new Size(95, 35) };
-        btnHuyBo = new Button { Text = "Hủy bỏ", Location = new Point(170, 320), Size = new Size(95, 35) };
-        btnKetThuc = new Button { Text = "Kết thúc", Location = new Point(290, 320), Size = new Size(95, 35) };
-
-        btnChon.Click += BtnChon_Click;
-        btnHuyBo.Click += BtnHuyBo_Click;
-        btnKetThuc.Click += (s, e) => this.Close();
-
-        this.FormClosing += (s, e) =>
+    private void BtnGhe_Click(object? sender, EventArgs e)
+    {
+        if (sender is Button btn && btn.Tag is int index)
         {
-            var r = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.No) e.Cancel = true;
-        };
-
-        this.Controls.AddRange(new Control[] { lblManAnh, lblThanhTienLabel, txtThanhTien, btnChon, btnHuyBo, btnKetThuc });
+            ClickGhe(index);
+        }
     }
 
     private int LayGiaVe(int index)
@@ -156,5 +106,19 @@ public class FrmBanVePhim : Form
             }
         }
         txtThanhTien.Text = "0 VNĐ";
+    }
+
+    private void BtnKetThuc_Click(object? sender, EventArgs e)
+    {
+        this.Close();
+    }
+
+    private void FrmBanVePhim_FormClosing(object? sender, FormClosingEventArgs e)
+    {
+        var r = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (r == DialogResult.No)
+        {
+            e.Cancel = true;
+        }
     }
 }

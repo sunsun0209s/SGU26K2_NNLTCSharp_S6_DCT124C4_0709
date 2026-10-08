@@ -4,7 +4,6 @@ partial class FrmMain
 {
     private System.ComponentModel.IContainer components = null!;
     private System.Windows.Forms.Label lblTitle;
-    private System.Windows.Forms.Label lblInfo;
     private System.Windows.Forms.GroupBox grpDe1;
     private System.Windows.Forms.GroupBox grpDe2;
     private System.Windows.Forms.Button btnDe1_MyName;
@@ -34,295 +33,304 @@ partial class FrmMain
 
     private void InitializeComponent()
     {
-        this.lblTitle = new System.Windows.Forms.Label();
-        this.lblInfo = new System.Windows.Forms.Label();
-        this.grpDe1 = new System.Windows.Forms.GroupBox();
-        this.btnDe1_MyName = new System.Windows.Forms.Button();
-        this.btnDe1_PhepTinh = new System.Windows.Forms.Button();
-        this.btnDe1_DangKy = new System.Windows.Forms.Button();
-        this.btnDe1_UCLN = new System.Windows.Forms.Button();
-        this.btnDe1_DaySo = new System.Windows.Forms.Button();
-        this.btnDe1_DocSo = new System.Windows.Forms.Button();
-        this.btnDe1_BanVePhim = new System.Windows.Forms.Button();
-        this.btnDe1_MayTinh = new System.Windows.Forms.Button();
-        this.grpDe2 = new System.Windows.Forms.GroupBox();
-        this.btnDe2_TinhToanRadio = new System.Windows.Forms.Button();
-        this.btnDe2_DinhDangFont = new System.Windows.Forms.Button();
-        this.btnDe2_GiaiPhuongTrinh = new System.Windows.Forms.Button();
-        this.btnDe2_MangSoNguyen = new System.Windows.Forms.Button();
-        this.btnDe2_CafeSinhVien = new System.Windows.Forms.Button();
-        this.btnDe2_KhachSan = new System.Windows.Forms.Button();
-        this.btnThoat = new System.Windows.Forms.Button();
-        this.grpDe1.SuspendLayout();
-        this.grpDe2.SuspendLayout();
-        this.SuspendLayout();
-
+        lblTitle = new Label();
+        grpDe1 = new GroupBox();
+        btnDe1_MyName = new Button();
+        btnDe1_PhepTinh = new Button();
+        btnDe1_DangKy = new Button();
+        btnDe1_UCLN = new Button();
+        btnDe1_DaySo = new Button();
+        btnDe1_DocSo = new Button();
+        btnDe1_BanVePhim = new Button();
+        btnDe1_MayTinh = new Button();
+        grpDe2 = new GroupBox();
+        btnDe2_TinhToanRadio = new Button();
+        btnDe2_DinhDangFont = new Button();
+        btnDe2_GiaiPhuongTrinh = new Button();
+        btnDe2_MangSoNguyen = new Button();
+        btnDe2_CafeSinhVien = new Button();
+        btnDe2_KhachSan = new Button();
+        btnThoat = new Button();
+        grpDe1.SuspendLayout();
+        grpDe2.SuspendLayout();
+        SuspendLayout();
+        // 
         // lblTitle
-        this.lblTitle.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
-        this.lblTitle.ForeColor = System.Drawing.Color.DarkBlue;
-        this.lblTitle.Location = new System.Drawing.Point(20, 10);
-        this.lblTitle.Name = "lblTitle";
-        this.lblTitle.Size = new System.Drawing.Size(800, 35);
-        this.lblTitle.TabIndex = 0;
-        this.lblTitle.Text = "BÀI TẬP THỰC HÀNH TUẦN 04 - WINDOWS FORMS CƠ BẢN";
-        this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-        // lblInfo
-        this.lblInfo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Italic);
-        this.lblInfo.ForeColor = System.Drawing.Color.DarkSlateGray;
-        this.lblInfo.Location = new System.Drawing.Point(20, 45);
-        this.lblInfo.Name = "lblInfo";
-        this.lblInfo.Size = new System.Drawing.Size(800, 22);
-        this.lblInfo.TabIndex = 1;
-        this.lblInfo.Text = "Sinh viên: Trương Xuân Tâm  |  MSSV: 3124411266  |  Lớp: DCT124C4";
-        this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
+        // 
+        lblTitle.Font = new Font("Tahoma", 15F, FontStyle.Bold);
+        lblTitle.ForeColor = Color.DarkBlue;
+        lblTitle.Location = new Point(20, 10);
+        lblTitle.Name = "lblTitle";
+        lblTitle.Size = new Size(800, 35);
+        lblTitle.TabIndex = 0;
+        lblTitle.Text = "BÀI TẬP THỰC HÀNH TUẦN 04";
+        lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+        lblTitle.Click += lblTitle_Click;
+        // 
         // grpDe1
-        this.grpDe1.Controls.Add(this.btnDe1_MyName);
-        this.grpDe1.Controls.Add(this.btnDe1_PhepTinh);
-        this.grpDe1.Controls.Add(this.btnDe1_DangKy);
-        this.grpDe1.Controls.Add(this.btnDe1_UCLN);
-        this.grpDe1.Controls.Add(this.btnDe1_DaySo);
-        this.grpDe1.Controls.Add(this.btnDe1_DocSo);
-        this.grpDe1.Controls.Add(this.btnDe1_BanVePhim);
-        this.grpDe1.Controls.Add(this.btnDe1_MayTinh);
-        this.grpDe1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-        this.grpDe1.ForeColor = System.Drawing.Color.DarkRed;
-        this.grpDe1.Location = new System.Drawing.Point(30, 80);
-        this.grpDe1.Name = "grpDe1";
-        this.grpDe1.Size = new System.Drawing.Size(380, 400);
-        this.grpDe1.TabIndex = 2;
-        this.grpDe1.TabStop = false;
-        this.grpDe1.Text = "ĐỀ LAB 04_1: CONTROLS CƠ BẢN & SỰ KIỆN";
-
+        // 
+        grpDe1.Controls.Add(btnDe1_MyName);
+        grpDe1.Controls.Add(btnDe1_PhepTinh);
+        grpDe1.Controls.Add(btnDe1_DangKy);
+        grpDe1.Controls.Add(btnDe1_UCLN);
+        grpDe1.Controls.Add(btnDe1_DaySo);
+        grpDe1.Controls.Add(btnDe1_DocSo);
+        grpDe1.Controls.Add(btnDe1_BanVePhim);
+        grpDe1.Controls.Add(btnDe1_MayTinh);
+        grpDe1.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+        grpDe1.ForeColor = Color.DarkRed;
+        grpDe1.Location = new Point(30, 80);
+        grpDe1.Name = "grpDe1";
+        grpDe1.Size = new Size(380, 400);
+        grpDe1.TabIndex = 2;
+        grpDe1.TabStop = false;
+        grpDe1.Text = "LAB 04_1: CONTROLS CƠ BẢN & SỰ KIỆN";
+        grpDe1.Enter += grpDe1_Enter;
+        // 
         // btnDe1_MyName
-        this.btnDe1_MyName.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe1_MyName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe1_MyName.ForeColor = System.Drawing.Color.Black;
-        this.btnDe1_MyName.Location = new System.Drawing.Point(20, 25);
-        this.btnDe1_MyName.Name = "btnDe1_MyName";
-        this.btnDe1_MyName.Size = new System.Drawing.Size(340, 36);
-        this.btnDe1_MyName.TabIndex = 0;
-        this.btnDe1_MyName.Text = "1. Bài Mẫu: My Name Project";
-        this.btnDe1_MyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe1_MyName.UseVisualStyleBackColor = false;
-        this.btnDe1_MyName.Click += new System.EventHandler(this.BtnDe1_MyName_Click);
-
+        // 
+        btnDe1_MyName.BackColor = Color.WhiteSmoke;
+        btnDe1_MyName.Font = new Font("Tahoma", 9F);
+        btnDe1_MyName.ForeColor = Color.Black;
+        btnDe1_MyName.Location = new Point(17, 48);
+        btnDe1_MyName.Name = "btnDe1_MyName";
+        btnDe1_MyName.Size = new Size(340, 36);
+        btnDe1_MyName.TabIndex = 0;
+        btnDe1_MyName.Text = "1. Bài Mẫu: My Name Project";
+        btnDe1_MyName.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe1_MyName.UseVisualStyleBackColor = false;
+        btnDe1_MyName.Click += BtnDe1_MyName_Click;
+        // 
         // btnDe1_PhepTinh
-        this.btnDe1_PhepTinh.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe1_PhepTinh.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe1_PhepTinh.ForeColor = System.Drawing.Color.Black;
-        this.btnDe1_PhepTinh.Location = new System.Drawing.Point(20, 68);
-        this.btnDe1_PhepTinh.Name = "btnDe1_PhepTinh";
-        this.btnDe1_PhepTinh.Size = new System.Drawing.Size(340, 36);
-        this.btnDe1_PhepTinh.TabIndex = 1;
-        this.btnDe1_PhepTinh.Text = "2. Bài 1: Phép Tính Số Học (+, -, *, /)";
-        this.btnDe1_PhepTinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe1_PhepTinh.UseVisualStyleBackColor = false;
-        this.btnDe1_PhepTinh.Click += new System.EventHandler(this.BtnDe1_PhepTinh_Click);
-
+        // 
+        btnDe1_PhepTinh.BackColor = Color.WhiteSmoke;
+        btnDe1_PhepTinh.Font = new Font("Tahoma", 9F);
+        btnDe1_PhepTinh.ForeColor = Color.Black;
+        btnDe1_PhepTinh.Location = new Point(17, 91);
+        btnDe1_PhepTinh.Name = "btnDe1_PhepTinh";
+        btnDe1_PhepTinh.Size = new Size(340, 36);
+        btnDe1_PhepTinh.TabIndex = 1;
+        btnDe1_PhepTinh.Text = "2. Bài 1: Phép Tính Số Học (+, -, *, /)";
+        btnDe1_PhepTinh.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe1_PhepTinh.UseVisualStyleBackColor = false;
+        btnDe1_PhepTinh.Click += BtnDe1_PhepTinh_Click;
+        // 
         // btnDe1_DangKy
-        this.btnDe1_DangKy.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe1_DangKy.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe1_DangKy.ForeColor = System.Drawing.Color.Black;
-        this.btnDe1_DangKy.Location = new System.Drawing.Point(20, 111);
-        this.btnDe1_DangKy.Name = "btnDe1_DangKy";
-        this.btnDe1_DangKy.Size = new System.Drawing.Size(340, 36);
-        this.btnDe1_DangKy.TabIndex = 2;
-        this.btnDe1_DangKy.Text = "3. Bài 2: Đăng Ký Tài Khoản";
-        this.btnDe1_DangKy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe1_DangKy.UseVisualStyleBackColor = false;
-        this.btnDe1_DangKy.Click += new System.EventHandler(this.BtnDe1_DangKy_Click);
-
+        // 
+        btnDe1_DangKy.BackColor = Color.WhiteSmoke;
+        btnDe1_DangKy.Font = new Font("Tahoma", 9F);
+        btnDe1_DangKy.ForeColor = Color.Black;
+        btnDe1_DangKy.Location = new Point(17, 134);
+        btnDe1_DangKy.Name = "btnDe1_DangKy";
+        btnDe1_DangKy.Size = new Size(340, 36);
+        btnDe1_DangKy.TabIndex = 2;
+        btnDe1_DangKy.Text = "3. Bài 2: Đăng Ký Tài Khoản";
+        btnDe1_DangKy.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe1_DangKy.UseVisualStyleBackColor = false;
+        btnDe1_DangKy.Click += BtnDe1_DangKy_Click;
+        // 
         // btnDe1_UCLN
-        this.btnDe1_UCLN.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe1_UCLN.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe1_UCLN.ForeColor = System.Drawing.Color.Black;
-        this.btnDe1_UCLN.Location = new System.Drawing.Point(20, 154);
-        this.btnDe1_UCLN.Name = "btnDe1_UCLN";
-        this.btnDe1_UCLN.Size = new System.Drawing.Size(340, 36);
-        this.btnDe1_UCLN.TabIndex = 3;
-        this.btnDe1_UCLN.Text = "4. Bài 3: Ước Số & Bội Số (UCLN, BCNN)";
-        this.btnDe1_UCLN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe1_UCLN.UseVisualStyleBackColor = false;
-        this.btnDe1_UCLN.Click += new System.EventHandler(this.BtnDe1_UCLN_Click);
-
+        // 
+        btnDe1_UCLN.BackColor = Color.WhiteSmoke;
+        btnDe1_UCLN.Font = new Font("Tahoma", 9F);
+        btnDe1_UCLN.ForeColor = Color.Black;
+        btnDe1_UCLN.Location = new Point(17, 177);
+        btnDe1_UCLN.Name = "btnDe1_UCLN";
+        btnDe1_UCLN.Size = new Size(340, 36);
+        btnDe1_UCLN.TabIndex = 3;
+        btnDe1_UCLN.Text = "4. Bài 3: Ước Số & Bội Số (UCLN, BCNN)";
+        btnDe1_UCLN.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe1_UCLN.UseVisualStyleBackColor = false;
+        btnDe1_UCLN.Click += BtnDe1_UCLN_Click;
+        // 
         // btnDe1_DaySo
-        this.btnDe1_DaySo.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe1_DaySo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe1_DaySo.ForeColor = System.Drawing.Color.Black;
-        this.btnDe1_DaySo.Location = new System.Drawing.Point(20, 197);
-        this.btnDe1_DaySo.Name = "btnDe1_DaySo";
-        this.btnDe1_DaySo.Size = new System.Drawing.Size(340, 36);
-        this.btnDe1_DaySo.TabIndex = 4;
-        this.btnDe1_DaySo.Text = "5. Bài 4: Nhập Dãy Số & Tính Tổng";
-        this.btnDe1_DaySo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe1_DaySo.UseVisualStyleBackColor = false;
-        this.btnDe1_DaySo.Click += new System.EventHandler(this.BtnDe1_DaySo_Click);
-
+        // 
+        btnDe1_DaySo.BackColor = Color.WhiteSmoke;
+        btnDe1_DaySo.Font = new Font("Tahoma", 9F);
+        btnDe1_DaySo.ForeColor = Color.Black;
+        btnDe1_DaySo.Location = new Point(17, 220);
+        btnDe1_DaySo.Name = "btnDe1_DaySo";
+        btnDe1_DaySo.Size = new Size(340, 36);
+        btnDe1_DaySo.TabIndex = 4;
+        btnDe1_DaySo.Text = "5. Bài 4: Nhập Dãy Số & Tính Tổng";
+        btnDe1_DaySo.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe1_DaySo.UseVisualStyleBackColor = false;
+        btnDe1_DaySo.Click += BtnDe1_DaySo_Click;
+        // 
         // btnDe1_DocSo
-        this.btnDe1_DocSo.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe1_DocSo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe1_DocSo.ForeColor = System.Drawing.Color.Black;
-        this.btnDe1_DocSo.Location = new System.Drawing.Point(20, 240);
-        this.btnDe1_DocSo.Name = "btnDe1_DocSo";
-        this.btnDe1_DocSo.Size = new System.Drawing.Size(340, 36);
-        this.btnDe1_DocSo.TabIndex = 5;
-        this.btnDe1_DocSo.Text = "6. Bài 5: Đọc Số Thành Chữ (1 - 999)";
-        this.btnDe1_DocSo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe1_DocSo.UseVisualStyleBackColor = false;
-        this.btnDe1_DocSo.Click += new System.EventHandler(this.BtnDe1_DocSo_Click);
-
+        // 
+        btnDe1_DocSo.BackColor = Color.WhiteSmoke;
+        btnDe1_DocSo.Font = new Font("Tahoma", 9F);
+        btnDe1_DocSo.ForeColor = Color.Black;
+        btnDe1_DocSo.Location = new Point(17, 263);
+        btnDe1_DocSo.Name = "btnDe1_DocSo";
+        btnDe1_DocSo.Size = new Size(340, 36);
+        btnDe1_DocSo.TabIndex = 5;
+        btnDe1_DocSo.Text = "6. Bài 5: Đọc Số Thành Chữ (1 - 999)";
+        btnDe1_DocSo.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe1_DocSo.UseVisualStyleBackColor = false;
+        btnDe1_DocSo.Click += BtnDe1_DocSo_Click;
+        // 
         // btnDe1_BanVePhim
-        this.btnDe1_BanVePhim.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe1_BanVePhim.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe1_BanVePhim.ForeColor = System.Drawing.Color.Black;
-        this.btnDe1_BanVePhim.Location = new System.Drawing.Point(20, 283);
-        this.btnDe1_BanVePhim.Name = "btnDe1_BanVePhim";
-        this.btnDe1_BanVePhim.Size = new System.Drawing.Size(340, 36);
-        this.btnDe1_BanVePhim.TabIndex = 6;
-        this.btnDe1_BanVePhim.Text = "7. Nâng Cao: Bán Vé Rạp Chiếu Phim";
-        this.btnDe1_BanVePhim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe1_BanVePhim.UseVisualStyleBackColor = false;
-        this.btnDe1_BanVePhim.Click += new System.EventHandler(this.BtnDe1_BanVePhim_Click);
-
+        // 
+        btnDe1_BanVePhim.BackColor = Color.WhiteSmoke;
+        btnDe1_BanVePhim.Font = new Font("Tahoma", 9F);
+        btnDe1_BanVePhim.ForeColor = Color.Black;
+        btnDe1_BanVePhim.Location = new Point(17, 306);
+        btnDe1_BanVePhim.Name = "btnDe1_BanVePhim";
+        btnDe1_BanVePhim.Size = new Size(340, 36);
+        btnDe1_BanVePhim.TabIndex = 6;
+        btnDe1_BanVePhim.Text = "7. Nâng Cao: Bán Vé Rạp Chiếu Phim";
+        btnDe1_BanVePhim.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe1_BanVePhim.UseVisualStyleBackColor = false;
+        btnDe1_BanVePhim.Click += BtnDe1_BanVePhim_Click;
+        // 
         // btnDe1_MayTinh
-        this.btnDe1_MayTinh.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe1_MayTinh.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe1_MayTinh.ForeColor = System.Drawing.Color.Black;
-        this.btnDe1_MayTinh.Location = new System.Drawing.Point(20, 326);
-        this.btnDe1_MayTinh.Name = "btnDe1_MayTinh";
-        this.btnDe1_MayTinh.Size = new System.Drawing.Size(340, 36);
-        this.btnDe1_MayTinh.TabIndex = 7;
-        this.btnDe1_MayTinh.Text = "8. Về Nhà: Máy Tính Bỏ Túi (Calculator)";
-        this.btnDe1_MayTinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe1_MayTinh.UseVisualStyleBackColor = false;
-        this.btnDe1_MayTinh.Click += new System.EventHandler(this.BtnDe1_MayTinh_Click);
-
+        // 
+        btnDe1_MayTinh.BackColor = Color.WhiteSmoke;
+        btnDe1_MayTinh.Font = new Font("Tahoma", 9F);
+        btnDe1_MayTinh.ForeColor = Color.Black;
+        btnDe1_MayTinh.Location = new Point(17, 349);
+        btnDe1_MayTinh.Name = "btnDe1_MayTinh";
+        btnDe1_MayTinh.Size = new Size(340, 36);
+        btnDe1_MayTinh.TabIndex = 7;
+        btnDe1_MayTinh.Text = "8. Về Nhà: Máy Tính Bỏ Túi (Calculator)";
+        btnDe1_MayTinh.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe1_MayTinh.UseVisualStyleBackColor = false;
+        btnDe1_MayTinh.Click += BtnDe1_MayTinh_Click;
+        // 
         // grpDe2
-        this.grpDe2.Controls.Add(this.btnDe2_TinhToanRadio);
-        this.grpDe2.Controls.Add(this.btnDe2_DinhDangFont);
-        this.grpDe2.Controls.Add(this.btnDe2_GiaiPhuongTrinh);
-        this.grpDe2.Controls.Add(this.btnDe2_MangSoNguyen);
-        this.grpDe2.Controls.Add(this.btnDe2_CafeSinhVien);
-        this.grpDe2.Controls.Add(this.btnDe2_KhachSan);
-        this.grpDe2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-        this.grpDe2.ForeColor = System.Drawing.Color.DarkGreen;
-        this.grpDe2.Location = new System.Drawing.Point(430, 80);
-        this.grpDe2.Name = "grpDe2";
-        this.grpDe2.Size = new System.Drawing.Size(380, 400);
-        this.grpDe2.TabIndex = 3;
-        this.grpDe2.TabStop = false;
-        this.grpDe2.Text = "ĐỀ LAB 04_2: RADIOBUTTON, CHECKBOX & OOP";
-
+        // 
+        grpDe2.Controls.Add(btnDe2_TinhToanRadio);
+        grpDe2.Controls.Add(btnDe2_DinhDangFont);
+        grpDe2.Controls.Add(btnDe2_GiaiPhuongTrinh);
+        grpDe2.Controls.Add(btnDe2_MangSoNguyen);
+        grpDe2.Controls.Add(btnDe2_CafeSinhVien);
+        grpDe2.Controls.Add(btnDe2_KhachSan);
+        grpDe2.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+        grpDe2.ForeColor = Color.DarkGreen;
+        grpDe2.Location = new Point(430, 80);
+        grpDe2.Name = "grpDe2";
+        grpDe2.Size = new Size(380, 400);
+        grpDe2.TabIndex = 3;
+        grpDe2.TabStop = false;
+        grpDe2.Text = "LAB 04_2: RADIOBUTTON, CHECKBOX & OOP";
+        // 
         // btnDe2_TinhToanRadio
-        this.btnDe2_TinhToanRadio.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe2_TinhToanRadio.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe2_TinhToanRadio.ForeColor = System.Drawing.Color.Black;
-        this.btnDe2_TinhToanRadio.Location = new System.Drawing.Point(20, 25);
-        this.btnDe2_TinhToanRadio.Name = "btnDe2_TinhToanRadio";
-        this.btnDe2_TinhToanRadio.Size = new System.Drawing.Size(340, 36);
-        this.btnDe2_TinhToanRadio.TabIndex = 0;
-        this.btnDe2_TinhToanRadio.Text = "1. Bài Mẫu 1: Phép Tính Radio + Class TinhToan";
-        this.btnDe2_TinhToanRadio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe2_TinhToanRadio.UseVisualStyleBackColor = false;
-        this.btnDe2_TinhToanRadio.Click += new System.EventHandler(this.BtnDe2_TinhToanRadio_Click);
-
+        // 
+        btnDe2_TinhToanRadio.BackColor = Color.WhiteSmoke;
+        btnDe2_TinhToanRadio.Font = new Font("Tahoma", 9F);
+        btnDe2_TinhToanRadio.ForeColor = Color.Black;
+        btnDe2_TinhToanRadio.Location = new Point(17, 48);
+        btnDe2_TinhToanRadio.Name = "btnDe2_TinhToanRadio";
+        btnDe2_TinhToanRadio.Size = new Size(340, 36);
+        btnDe2_TinhToanRadio.TabIndex = 0;
+        btnDe2_TinhToanRadio.Text = "1. Bài Mẫu 1: Phép Tính Radio + Class TinhToan";
+        btnDe2_TinhToanRadio.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe2_TinhToanRadio.UseVisualStyleBackColor = false;
+        btnDe2_TinhToanRadio.Click += BtnDe2_TinhToanRadio_Click;
+        // 
         // btnDe2_DinhDangFont
-        this.btnDe2_DinhDangFont.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe2_DinhDangFont.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe2_DinhDangFont.ForeColor = System.Drawing.Color.Black;
-        this.btnDe2_DinhDangFont.Location = new System.Drawing.Point(20, 68);
-        this.btnDe2_DinhDangFont.Name = "btnDe2_DinhDangFont";
-        this.btnDe2_DinhDangFont.Size = new System.Drawing.Size(340, 36);
-        this.btnDe2_DinhDangFont.TabIndex = 1;
-        this.btnDe2_DinhDangFont.Text = "2. Bài Mẫu 2: Định Dạng Font & Màu Sắc";
-        this.btnDe2_DinhDangFont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe2_DinhDangFont.UseVisualStyleBackColor = false;
-        this.btnDe2_DinhDangFont.Click += new System.EventHandler(this.BtnDe2_DinhDangFont_Click);
-
+        // 
+        btnDe2_DinhDangFont.BackColor = Color.WhiteSmoke;
+        btnDe2_DinhDangFont.Font = new Font("Tahoma", 9F);
+        btnDe2_DinhDangFont.ForeColor = Color.Black;
+        btnDe2_DinhDangFont.Location = new Point(17, 91);
+        btnDe2_DinhDangFont.Name = "btnDe2_DinhDangFont";
+        btnDe2_DinhDangFont.Size = new Size(340, 36);
+        btnDe2_DinhDangFont.TabIndex = 1;
+        btnDe2_DinhDangFont.Text = "2. Bài Mẫu 2: Định Dạng Font & Màu Sắc";
+        btnDe2_DinhDangFont.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe2_DinhDangFont.UseVisualStyleBackColor = false;
+        btnDe2_DinhDangFont.Click += BtnDe2_DinhDangFont_Click;
+        // 
         // btnDe2_GiaiPhuongTrinh
-        this.btnDe2_GiaiPhuongTrinh.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe2_GiaiPhuongTrinh.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe2_GiaiPhuongTrinh.ForeColor = System.Drawing.Color.Black;
-        this.btnDe2_GiaiPhuongTrinh.Location = new System.Drawing.Point(20, 111);
-        this.btnDe2_GiaiPhuongTrinh.Name = "btnDe2_GiaiPhuongTrinh";
-        this.btnDe2_GiaiPhuongTrinh.Size = new System.Drawing.Size(340, 36);
-        this.btnDe2_GiaiPhuongTrinh.TabIndex = 2;
-        this.btnDe2_GiaiPhuongTrinh.Text = "3. Bài 1: Giải Phương Trình Bậc 1 & 2 (OOP)";
-        this.btnDe2_GiaiPhuongTrinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe2_GiaiPhuongTrinh.UseVisualStyleBackColor = false;
-        this.btnDe2_GiaiPhuongTrinh.Click += new System.EventHandler(this.BtnDe2_GiaiPhuongTrinh_Click);
-
+        // 
+        btnDe2_GiaiPhuongTrinh.BackColor = Color.WhiteSmoke;
+        btnDe2_GiaiPhuongTrinh.Font = new Font("Tahoma", 9F);
+        btnDe2_GiaiPhuongTrinh.ForeColor = Color.Black;
+        btnDe2_GiaiPhuongTrinh.Location = new Point(17, 134);
+        btnDe2_GiaiPhuongTrinh.Name = "btnDe2_GiaiPhuongTrinh";
+        btnDe2_GiaiPhuongTrinh.Size = new Size(340, 36);
+        btnDe2_GiaiPhuongTrinh.TabIndex = 2;
+        btnDe2_GiaiPhuongTrinh.Text = "3. Bài 1: Giải Phương Trình Bậc 1 & 2 (OOP)";
+        btnDe2_GiaiPhuongTrinh.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe2_GiaiPhuongTrinh.UseVisualStyleBackColor = false;
+        btnDe2_GiaiPhuongTrinh.Click += BtnDe2_GiaiPhuongTrinh_Click;
+        // 
         // btnDe2_MangSoNguyen
-        this.btnDe2_MangSoNguyen.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe2_MangSoNguyen.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe2_MangSoNguyen.ForeColor = System.Drawing.Color.Black;
-        this.btnDe2_MangSoNguyen.Location = new System.Drawing.Point(20, 154);
-        this.btnDe2_MangSoNguyen.Name = "btnDe2_MangSoNguyen";
-        this.btnDe2_MangSoNguyen.Size = new System.Drawing.Size(340, 36);
-        this.btnDe2_MangSoNguyen.TabIndex = 3;
-        this.btnDe2_MangSoNguyen.Text = "4. Bài 2: Thao Tác Mảng Số Nguyên (OOP)";
-        this.btnDe2_MangSoNguyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe2_MangSoNguyen.UseVisualStyleBackColor = false;
-        this.btnDe2_MangSoNguyen.Click += new System.EventHandler(this.BtnDe2_MangSoNguyen_Click);
-
+        // 
+        btnDe2_MangSoNguyen.BackColor = Color.WhiteSmoke;
+        btnDe2_MangSoNguyen.Font = new Font("Tahoma", 9F);
+        btnDe2_MangSoNguyen.ForeColor = Color.Black;
+        btnDe2_MangSoNguyen.Location = new Point(17, 177);
+        btnDe2_MangSoNguyen.Name = "btnDe2_MangSoNguyen";
+        btnDe2_MangSoNguyen.Size = new Size(340, 36);
+        btnDe2_MangSoNguyen.TabIndex = 3;
+        btnDe2_MangSoNguyen.Text = "4. Bài 2: Thao Tác Mảng Số Nguyên (OOP)";
+        btnDe2_MangSoNguyen.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe2_MangSoNguyen.UseVisualStyleBackColor = false;
+        btnDe2_MangSoNguyen.Click += BtnDe2_MangSoNguyen_Click;
+        // 
         // btnDe2_CafeSinhVien
-        this.btnDe2_CafeSinhVien.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe2_CafeSinhVien.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe2_CafeSinhVien.ForeColor = System.Drawing.Color.Black;
-        this.btnDe2_CafeSinhVien.Location = new System.Drawing.Point(20, 197);
-        this.btnDe2_CafeSinhVien.Name = "btnDe2_CafeSinhVien";
-        this.btnDe2_CafeSinhVien.Size = new System.Drawing.Size(340, 36);
-        this.btnDe2_CafeSinhVien.TabIndex = 4;
-        this.btnDe2_CafeSinhVien.Text = "5. Nâng Cao: Quản Lý Cafe Sinh Viên";
-        this.btnDe2_CafeSinhVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe2_CafeSinhVien.UseVisualStyleBackColor = false;
-        this.btnDe2_CafeSinhVien.Click += new System.EventHandler(this.BtnDe2_CafeSinhVien_Click);
-
+        // 
+        btnDe2_CafeSinhVien.BackColor = Color.WhiteSmoke;
+        btnDe2_CafeSinhVien.Font = new Font("Tahoma", 9F);
+        btnDe2_CafeSinhVien.ForeColor = Color.Black;
+        btnDe2_CafeSinhVien.Location = new Point(17, 220);
+        btnDe2_CafeSinhVien.Name = "btnDe2_CafeSinhVien";
+        btnDe2_CafeSinhVien.Size = new Size(340, 36);
+        btnDe2_CafeSinhVien.TabIndex = 4;
+        btnDe2_CafeSinhVien.Text = "5. Nâng Cao: Quản Lý Cafe Sinh Viên";
+        btnDe2_CafeSinhVien.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe2_CafeSinhVien.UseVisualStyleBackColor = false;
+        btnDe2_CafeSinhVien.Click += BtnDe2_CafeSinhVien_Click;
+        // 
         // btnDe2_KhachSan
-        this.btnDe2_KhachSan.BackColor = System.Drawing.Color.WhiteSmoke;
-        this.btnDe2_KhachSan.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
-        this.btnDe2_KhachSan.ForeColor = System.Drawing.Color.Black;
-        this.btnDe2_KhachSan.Location = new System.Drawing.Point(20, 240);
-        this.btnDe2_KhachSan.Name = "btnDe2_KhachSan";
-        this.btnDe2_KhachSan.Size = new System.Drawing.Size(340, 36);
-        this.btnDe2_KhachSan.TabIndex = 5;
-        this.btnDe2_KhachSan.Text = "6. Về Nhà: Quản Lý Khách Sạn Thanh Thanh";
-        this.btnDe2_KhachSan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnDe2_KhachSan.UseVisualStyleBackColor = false;
-        this.btnDe2_KhachSan.Click += new System.EventHandler(this.BtnDe2_KhachSan_Click);
-
+        // 
+        btnDe2_KhachSan.BackColor = Color.WhiteSmoke;
+        btnDe2_KhachSan.Font = new Font("Tahoma", 9F);
+        btnDe2_KhachSan.ForeColor = Color.Black;
+        btnDe2_KhachSan.Location = new Point(17, 263);
+        btnDe2_KhachSan.Name = "btnDe2_KhachSan";
+        btnDe2_KhachSan.Size = new Size(340, 36);
+        btnDe2_KhachSan.TabIndex = 5;
+        btnDe2_KhachSan.Text = "6. Về Nhà: Quản Lý Khách Sạn Thanh Thanh";
+        btnDe2_KhachSan.TextAlign = ContentAlignment.MiddleLeft;
+        btnDe2_KhachSan.UseVisualStyleBackColor = false;
+        btnDe2_KhachSan.Click += BtnDe2_KhachSan_Click;
+        // 
         // btnThoat
-        this.btnThoat.BackColor = System.Drawing.Color.MistyRose;
-        this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-        this.btnThoat.ForeColor = System.Drawing.Color.Black;
-        this.btnThoat.Location = new System.Drawing.Point(340, 495);
-        this.btnThoat.Name = "btnThoat";
-        this.btnThoat.Size = new System.Drawing.Size(160, 38);
-        this.btnThoat.TabIndex = 4;
-        this.btnThoat.Text = "Thoát Chương Trình";
-        this.btnThoat.UseVisualStyleBackColor = false;
-        this.btnThoat.Click += new System.EventHandler(this.BtnThoat_Click);
-
+        // 
+        btnThoat.BackColor = Color.MistyRose;
+        btnThoat.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+        btnThoat.ForeColor = Color.Black;
+        btnThoat.Location = new Point(340, 495);
+        btnThoat.Name = "btnThoat";
+        btnThoat.Size = new Size(160, 38);
+        btnThoat.TabIndex = 4;
+        btnThoat.Text = "Thoát Chương Trình";
+        btnThoat.UseVisualStyleBackColor = false;
+        btnThoat.Click += BtnThoat_Click;
+        // 
         // FrmMain
-        this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(844, 541);
-        this.Controls.Add(this.btnThoat);
-        this.Controls.Add(this.grpDe2);
-        this.Controls.Add(this.grpDe1);
-        this.Controls.Add(this.lblInfo);
-        this.Controls.Add(this.lblTitle);
-        this.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Regular);
-        this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-        this.MaximizeBox = false;
-        this.Name = "FrmMain";
-        this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        this.Text = "BÀI TẬP THỰC HÀNH TUẦN 04 - WINDOWS FORMS (ĐỀ 1 & ĐỀ 2)";
-        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
-        this.grpDe1.ResumeLayout(false);
-        this.grpDe2.ResumeLayout(false);
-        this.ResumeLayout(false);
+        // 
+        AutoScaleDimensions = new SizeF(9F, 19F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(844, 541);
+        Controls.Add(btnThoat);
+        Controls.Add(grpDe2);
+        Controls.Add(grpDe1);
+        Controls.Add(lblTitle);
+        Font = new Font("Tahoma", 9.5F);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        MaximizeBox = false;
+        Name = "FrmMain";
+        StartPosition = FormStartPosition.CenterScreen;
+        Text = "BÀI TẬP THỰC HÀNH TUẦN 04 - WINDOWS FORMS (ĐỀ 1 & ĐỀ 2)";
+        FormClosing += FrmMain_FormClosing;
+        grpDe1.ResumeLayout(false);
+        grpDe2.ResumeLayout(false);
+        ResumeLayout(false);
     }
 }

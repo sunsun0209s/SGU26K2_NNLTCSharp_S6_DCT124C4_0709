@@ -1,12 +1,10 @@
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Lab04Prj.Forms;
 
-public class FrmMayTinhBoTui : Form
+public partial class FrmMayTinhBoTui : Form
 {
-    private TextBox txtDisplay = null!;
     private double firstOperand = 0;
     private char currentOp = ' ';
     private bool isNewEntry = true;
@@ -16,89 +14,24 @@ public class FrmMayTinhBoTui : Form
         InitializeComponent();
     }
 
-    private void InitializeComponent()
+    private void BtnDigit_Click(object? sender, EventArgs e)
     {
-        this.Text = "Máy Tính Bỏ Túi";
-        this.Font = new Font("Tahoma", 10F, FontStyle.Regular);
-        this.Size = new Size(310, 390);
-        this.StartPosition = FormStartPosition.CenterScreen;
-        this.FormBorderStyle = FormBorderStyle.FixedDialog;
-        this.MaximizeBox = false;
-
-        Label lblTitle = new Label
+        if (sender is Button btn)
         {
-            Text = "Máy Tính Bỏ Túi",
-            Font = new Font("Tahoma", 13F, FontStyle.Bold),
-            ForeColor = Color.Red,
-            TextAlign = ContentAlignment.MiddleCenter,
-            Location = new Point(15, 10),
-            Size = new Size(265, 30)
-        };
-
-        txtDisplay = new TextBox
-        {
-            Text = "0",
-            Font = new Font("Consolas", 16F, FontStyle.Bold),
-            TextAlign = HorizontalAlignment.Right,
-            ReadOnly = true,
-            Location = new Point(20, 50),
-            Size = new Size(255, 35),
-            BackColor = Color.White
-        };
-
-        string[,] buttons = {
-            { "7", "8", "9", "/" },
-            { "4", "5", "6", "*" },
-            { "1", "2", "3", "-" },
-            { "0", "C", "=", "+" }
-        };
-
-        int startX = 20;
-        int startY = 100;
-        int btnW = 57;
-        int btnH = 50;
-        int gap = 9;
-
-        for (int r = 0; r < 4; r++)
-        {
-            for (int c = 0; c < 4; c++)
-            {
-                string text = buttons[r, c];
-                Button btn = new Button
-                {
-                    Text = text,
-                    Font = new Font("Tahoma", 12F, FontStyle.Bold),
-                    Size = new Size(btnW, btnH),
-                    Location = new Point(startX + c * (btnW + gap), startY + r * (btnH + gap))
-                };
-
-                if (char.IsDigit(text[0]))
-                {
-                    btn.Click += (s, e) => ClickNumber(text);
-                }
-                else if (text == "C")
-                {
-                    btn.BackColor = Color.MistyRose;
-                    btn.Click += (s, e) => ClickClear();
-                }
-                else if (text == "=")
-                {
-                    btn.BackColor = Color.LightGreen;
-                    btn.Click += (s, e) => ClickEquals();
-                }
-                else
-                {
-                    btn.BackColor = Color.LightSkyBlue;
-                    btn.Click += (s, e) => ClickOperator(text[0]);
-                }
-
-                this.Controls.Add(btn);
-            }
+            ClickNumber(btn.Text);
         }
-
-        this.Controls.Add(lblTitle);
-        this.Controls.Add(txtDisplay);
     }
+
+    private void BtnOp_Click(object? sender, EventArgs e)
+    {
+        if (sender is Button btn && btn.Text.Length > 0)
+        {
+            ClickOperator(btn.Text[0]);
+        }
+    }
+
+    private void BtnBang_Click(object? sender, EventArgs e) => ClickEquals();
+    private void BtnC_Click(object? sender, EventArgs e) => ClickClear();
 
     private void ClickNumber(string num)
     {

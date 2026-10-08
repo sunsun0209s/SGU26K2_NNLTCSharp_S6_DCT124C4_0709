@@ -36,4 +36,14 @@ public partial class FrmMain : Form
             e.Cancel = true;
         }
     }
+
+    private void lblTitle_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void grpDe1_Enter(object sender, EventArgs e)
+    {
+
+    }
 }

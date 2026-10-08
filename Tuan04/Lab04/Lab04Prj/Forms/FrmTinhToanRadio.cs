@@ -1,81 +1,23 @@
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 using Lab04Prj.Models;
 
 namespace Lab04Prj.Forms;
 
-public class FrmTinhToanRadio : Form
+public partial class FrmTinhToanRadio : Form
 {
-    private Label lblA = null!;
-    private TextBox txtA = null!;
-    private Label lblB = null!;
-    private TextBox txtB = null!;
-    private Label lblKetQua = null!;
-    private TextBox txtKetQua = null!;
-    private RadioButton rdoCong = null!;
-    private RadioButton rdoTru = null!;
-    private RadioButton rdoNhan = null!;
-    private RadioButton rdoChia = null!;
-    private Button btnTinh = null!;
-    private ErrorProvider errorProvider = null!;
-
     public FrmTinhToanRadio()
     {
         InitializeComponent();
     }
 
-    private void InitializeComponent()
+    private void FrmTinhToanRadio_FormClosing(object? sender, FormClosingEventArgs e)
     {
-        this.Text = "Cộng trừ nhân chia Radio";
-        this.Font = new Font("Tahoma", 10F, FontStyle.Regular);
-        this.Size = new Size(420, 260);
-        this.StartPosition = FormStartPosition.CenterScreen;
-        this.FormBorderStyle = FormBorderStyle.FixedDialog;
-        this.MaximizeBox = false;
-
-        errorProvider = new ErrorProvider();
-
-        lblA = new Label { Text = "a =", Location = new Point(30, 25), Size = new Size(40, 25) };
-        txtA = new TextBox { Location = new Point(75, 22), Size = new Size(110, 25) };
-
-        lblB = new Label { Text = "b =", Location = new Point(220, 25), Size = new Size(40, 25) };
-        txtB = new TextBox { Location = new Point(265, 22), Size = new Size(110, 25) };
-
-        lblKetQua = new Label { Text = "Kết quả", Location = new Point(30, 65), Size = new Size(60, 25) };
-        txtKetQua = new TextBox { Location = new Point(100, 62), Size = new Size(275, 25), ReadOnly = true };
-
-        GroupBox grpPhepToan = new GroupBox
+        var r = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (r == DialogResult.No)
         {
-            Text = "Phép toán",
-            Location = new Point(30, 100),
-            Size = new Size(345, 55)
-        };
-
-        rdoCong = new RadioButton { Text = "+", Checked = true, Location = new Point(20, 20), Size = new Size(60, 25) };
-        rdoTru = new RadioButton { Text = "-", Location = new Point(100, 20), Size = new Size(60, 25) };
-        rdoNhan = new RadioButton { Text = "x", Location = new Point(180, 20), Size = new Size(60, 25) };
-        rdoChia = new RadioButton { Text = "/", Location = new Point(260, 20), Size = new Size(60, 25) };
-
-        grpPhepToan.Controls.AddRange(new Control[] { rdoCong, rdoTru, rdoNhan, rdoChia });
-
-        btnTinh = new Button
-        {
-            Text = "Tính",
-            Font = new Font("Tahoma", 10F, FontStyle.Bold),
-            Location = new Point(155, 170),
-            Size = new Size(100, 35)
-        };
-
-        btnTinh.Click += BtnTinh_Click;
-
-        this.FormClosing += (s, e) =>
-        {
-            var r = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.No) e.Cancel = true;
-        };
-
-        this.Controls.AddRange(new Control[] { lblA, txtA, lblB, txtB, lblKetQua, txtKetQua, grpPhepToan, btnTinh });
+            e.Cancel = true;
+        }
     }
 
     private void BtnTinh_Click(object? sender, EventArgs e)
