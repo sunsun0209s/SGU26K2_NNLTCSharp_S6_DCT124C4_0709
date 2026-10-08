@@ -87,9 +87,10 @@ partial class FrmGiaiPhuongTrinh
         this.rdoBacHai.CheckedChanged += new System.EventHandler(this.RdoLoai_CheckedChanged);
 
         // lblA
-        this.lblA.Location = new System.Drawing.Point(35, 140);
+        this.lblA.AutoSize = true;
+        this.lblA.Location = new System.Drawing.Point(35, 141);
         this.lblA.Name = "lblA";
-        this.lblA.Size = new System.Drawing.Size(70, 25);
+        this.lblA.Size = new System.Drawing.Size(56, 17);
         this.lblA.TabIndex = 2;
         this.lblA.Text = "Nhập a:";
 
@@ -101,9 +102,10 @@ partial class FrmGiaiPhuongTrinh
         this.txtA.TextChanged += new System.EventHandler(this.Input_TextChanged);
 
         // lblB
-        this.lblB.Location = new System.Drawing.Point(35, 175);
+        this.lblB.AutoSize = true;
+        this.lblB.Location = new System.Drawing.Point(35, 176);
         this.lblB.Name = "lblB";
-        this.lblB.Size = new System.Drawing.Size(70, 25);
+        this.lblB.Size = new System.Drawing.Size(57, 17);
         this.lblB.TabIndex = 4;
         this.lblB.Text = "Nhập b:";
 
@@ -115,9 +117,10 @@ partial class FrmGiaiPhuongTrinh
         this.txtB.TextChanged += new System.EventHandler(this.Input_TextChanged);
 
         // lblC
-        this.lblC.Location = new System.Drawing.Point(35, 210);
+        this.lblC.AutoSize = true;
+        this.lblC.Location = new System.Drawing.Point(35, 211);
         this.lblC.Name = "lblC";
-        this.lblC.Size = new System.Drawing.Size(70, 25);
+        this.lblC.Size = new System.Drawing.Size(56, 17);
         this.lblC.TabIndex = 6;
         this.lblC.Text = "Nhập c:";
         this.lblC.Visible = false;
@@ -131,9 +134,10 @@ partial class FrmGiaiPhuongTrinh
         this.txtC.TextChanged += new System.EventHandler(this.Input_TextChanged);
 
         // lblKetQua
-        this.lblKetQua.Location = new System.Drawing.Point(35, 250);
+        this.lblKetQua.AutoSize = true;
+        this.lblKetQua.Location = new System.Drawing.Point(35, 251);
         this.lblKetQua.Name = "lblKetQua";
-        this.lblKetQua.Size = new System.Drawing.Size(70, 25);
+        this.lblKetQua.Size = new System.Drawing.Size(61, 17);
         this.lblKetQua.TabIndex = 8;
         this.lblKetQua.Text = "Kết quả:";
 
@@ -172,12 +176,12 @@ partial class FrmGiaiPhuongTrinh
         this.Controls.Add(this.btnGiai);
         this.Controls.Add(this.txtKetQua);
         this.Controls.Add(this.lblKetQua);
-        this.Controls.Add(this.txtC);
         this.Controls.Add(this.lblC);
-        this.Controls.Add(this.txtB);
+        this.Controls.Add(this.txtC);
         this.Controls.Add(this.lblB);
-        this.Controls.Add(this.txtA);
+        this.Controls.Add(this.txtB);
         this.Controls.Add(this.lblA);
+        this.Controls.Add(this.txtA);
         this.Controls.Add(this.grpLoai);
         this.Controls.Add(this.lblTitle);
         this.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular);

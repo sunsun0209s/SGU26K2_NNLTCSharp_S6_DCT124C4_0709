@@ -450,3 +450,4 @@ FodyWeavers.xsd
 # Office & Report exports
 *.docx
 *.html
+_Lab*.pdf

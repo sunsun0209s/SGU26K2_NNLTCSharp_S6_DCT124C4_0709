@@ -16,6 +16,10 @@ public partial class FrmGiaiPhuongTrinh : Form
         bool isBacHai = rdoBacHai.Checked;
         lblC.Visible = isBacHai;
         txtC.Visible = isBacHai;
+        if (isBacHai)
+        {
+            txtC.BringToFront();
+        }
         KiemTraDieuKienGiai();
     }
 
