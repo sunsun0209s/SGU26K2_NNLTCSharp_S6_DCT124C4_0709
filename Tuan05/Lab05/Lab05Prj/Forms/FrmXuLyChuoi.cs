@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ public partial class FrmXuLyChuoi : Form
 
     private void BtnNgauNhien_Click(object? sender, EventArgs e)
     {
+        lstHoTen.BeginUpdate();
         lstHoTen.Items.Clear();
         var rnd = new Random();
         for (int i = 0; i < 50; i++)
@@ -27,6 +29,7 @@ public partial class FrmXuLyChuoi : Form
             string t = TEN[rnd.Next(TEN.Length)];
             lstHoTen.Items.Add($"{h} {l} {t}");
         }
+        lstHoTen.EndUpdate();
     }
 
     private void BtnXoaDangChon_Click(object? sender, EventArgs e)
@@ -38,15 +41,18 @@ public partial class FrmXuLyChuoi : Form
             return;
         }
 
+        lstHoTen.BeginUpdate();
         foreach (int idx in selectedList)
         {
             lstHoTen.Items.RemoveAt(idx);
         }
+        lstHoTen.EndUpdate();
     }
 
     private void BtnXoaTenSon_Click(object? sender, EventArgs e)
     {
         int count = 0;
+        lstHoTen.BeginUpdate();
         for (int i = lstHoTen.Items.Count - 1; i >= 0; i--)
         {
             string item = lstHoTen.Items[i]?.ToString()?.Trim() ?? string.Empty;
@@ -56,12 +62,14 @@ public partial class FrmXuLyChuoi : Form
                 count++;
             }
         }
+        lstHoTen.EndUpdate();
         MessageBox.Show($"Đã xóa {count} người có tên là 'Sơn'!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void BtnXoaHoLe_Click(object? sender, EventArgs e)
     {
         int count = 0;
+        lstHoTen.BeginUpdate();
         for (int i = lstHoTen.Items.Count - 1; i >= 0; i--)
         {
             string item = lstHoTen.Items[i]?.ToString()?.Trim() ?? string.Empty;
@@ -71,56 +79,51 @@ public partial class FrmXuLyChuoi : Form
                 count++;
             }
         }
+        lstHoTen.EndUpdate();
         MessageBox.Show($"Đã xóa {count} người có họ là 'Lê'!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+
+    private void BienDoiChuoi(Func<string, string> transformFunc, string thongBaoTrong)
+    {
+        var selectedIndices = lstHoTen.SelectedIndices.Cast<int>().OrderBy(idx => idx).ToList();
+        if (selectedIndices.Count == 0)
+        {
+            MessageBox.Show(thongBaoTrong, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        lstHoTen.BeginUpdate();
+        foreach (int idx in selectedIndices)
+        {
+            string oldText = lstHoTen.Items[idx]?.ToString() ?? string.Empty;
+            string newText = transformFunc(oldText);
+            lstHoTen.Items.RemoveAt(idx);
+            lstHoTen.Items.Insert(idx, newText);
+        }
+
+        lstHoTen.ClearSelected();
+        foreach (int idx in selectedIndices)
+        {
+            lstHoTen.SetSelected(idx, true);
+        }
+        lstHoTen.EndUpdate();
+        lstHoTen.Refresh();
     }
 
     private void BtnInHoa_Click(object? sender, EventArgs e)
     {
-        var indices = lstHoTen.SelectedIndices.Cast<int>().ToList();
-        if (indices.Count == 0)
-        {
-            MessageBox.Show("Vui lòng chọn các phần tử cần in HOA!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
-        }
-
-        foreach (int idx in indices)
-        {
-            string text = lstHoTen.Items[idx]?.ToString() ?? string.Empty;
-            lstHoTen.Items[idx] = text.ToUpper();
-        }
+        BienDoiChuoi(text => text.ToUpper(), "Vui lòng chọn các phần tử cần in HOA!");
     }
 
     private void BtnInThuong_Click(object? sender, EventArgs e)
     {
-        var indices = lstHoTen.SelectedIndices.Cast<int>().ToList();
-        if (indices.Count == 0)
-        {
-            MessageBox.Show("Vui lòng chọn các phần tử cần in thường!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
-        }
-
-        foreach (int idx in indices)
-        {
-            string text = lstHoTen.Items[idx]?.ToString() ?? string.Empty;
-            lstHoTen.Items[idx] = text.ToLower();
-        }
+        BienDoiChuoi(text => text.ToLower(), "Vui lòng chọn các phần tử cần in thường!");
     }
 
     private void BtnTitleCase_Click(object? sender, EventArgs e)
     {
-        var indices = lstHoTen.SelectedIndices.Cast<int>().ToList();
-        if (indices.Count == 0)
-        {
-            MessageBox.Show("Vui lòng chọn các phần tử cần viết hoa đầu mỗi từ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
-        }
-
         var textInfo = CultureInfo.CurrentCulture.TextInfo;
-        foreach (int idx in indices)
-        {
-            string text = lstHoTen.Items[idx]?.ToString() ?? string.Empty;
-            lstHoTen.Items[idx] = textInfo.ToTitleCase(text.ToLower());
-        }
+        BienDoiChuoi(text => textInfo.ToTitleCase(text.ToLower()), "Vui lòng chọn các phần tử cần viết hoa đầu mỗi từ!");
     }
 
     private void BtnXoaTatCa_Click(object? sender, EventArgs e)
@@ -143,7 +146,12 @@ public partial class FrmXuLyChuoi : Form
             using var dlg = new FrmInputNameDialog(currentName);
             if (dlg.ShowDialog(this) == DialogResult.OK)
             {
-                lstHoTen.Items[index] = dlg.TenNhap;
+                lstHoTen.BeginUpdate();
+                lstHoTen.Items.RemoveAt(index);
+                lstHoTen.Items.Insert(index, dlg.TenNhap);
+                lstHoTen.SetSelected(index, true);
+                lstHoTen.EndUpdate();
+                lstHoTen.Refresh();
             }
         }
     }
